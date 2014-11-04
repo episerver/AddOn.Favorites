@@ -5,7 +5,6 @@ using System.Web.Mvc;
 using AddOn.Favorites.Models;
 using EPiServer.Core;
 using EPiServer.Data.Dynamic;
-using EPiServer.Framework.Serialization;
 using EPiServer.Shell;
 using EPiServer.Shell.Services.Rest;
 
@@ -22,10 +21,7 @@ namespace AddOn.Favorites.Controllers
         /// <summary>
         /// Initializes a new instance of the <see cref="FavoritesStore"/> class.
         /// </summary>
-        public FavoritesStore(IEnumerable<IRestControllerValueProvider> valueProviders,
-                              IObjectSerializerFactory objectSerializerFactory,
-                              DynamicDataStoreFactory dynamicDataStoreFactory)
-            : base(valueProviders, objectSerializerFactory)
+        public FavoritesStore(DynamicDataStoreFactory dynamicDataStoreFactory)
         {
             Validate.RequiredParameter("dynamicDataStoreFactory", dynamicDataStoreFactory);
             _dynamicDataStoreFactory = dynamicDataStoreFactory;
@@ -52,8 +48,8 @@ namespace AddOn.Favorites.Controllers
         [HttpPost]
         public ActionResult Post(ContentReference reference)
         {
-            string username = User.Identity.Name;
-            string contentLink = reference.CreateReferenceWithoutVersion().ToString();
+            var username = User.Identity.Name;
+            var contentLink = reference.ToReferenceWithoutVersion().ToString();
 
             var item = DataStore.Items<FavoriteModel>()
                                 .FirstOrDefault(model => model.UserName == username && model.ContentLink == contentLink);
