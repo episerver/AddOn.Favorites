@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>1.0.0</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>AddOn.Favorites</id>
+    <version>$version$</version>
+    <title>AddOn.Favorites</title>
+    <authors>EPiServer AB</authors>
+    <owners>EPiServer AB</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>Fancy addon</description>
     <releaseNotes>Initial release of the Favorites addon.</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>EPiServerModulePackage EPiServer-UI</tags>
     <dependencies>
-      <dependency id="EPiServer.Shell.UI" version="[2.0,3.0)" />
-      <dependency id="EPiServer.Cms.Shell.UI" version="[2.0,3.0)" />
+      <dependency id="EPiServer.CMS.UI" version="[7.15.0,8.0)" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin\$configuration$\AddOn.Favorites.dll" target="lib\net45\" />
+    <file src="bin\$configuration$\AddOn.Favorites.zip" target="content\modules\_protected\AddOn.Favorites\" />
+  </files>
 </package>

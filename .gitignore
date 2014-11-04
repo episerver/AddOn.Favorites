@@ -6,3 +6,6 @@
 /obj/*
 /bin/*
 *.suo
+*.usr
+*.user
+/tmp/*
