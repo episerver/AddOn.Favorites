@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <addon>
+      <favorites>
+        <description>A list of content that the user has marked as a favorite.</description>
+        <title>Favorites</title>
+        <commands>
+          <add>
+            <label>Add Favorite</label>
+            <tooltip>Adds the current content to your list of favorites</tooltip>
+          </add>
+          <remove>
+            <label>Remove Favorite</label>
+            <tooltip>Removes the selected favorite from your list</tooltip>
+          </remove>
+        </commands>
+      </favorites>
+    </addon>
+  </language>
+</languages>
