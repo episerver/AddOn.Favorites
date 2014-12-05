@@ -5,5 +5,5 @@ This repository shows how you can build and package an UI addon nuget package th
 
 ## Requirements and notifications
 
-* Requires EPiServer.CMS.UI version 7.15.o or higher
+* Requires EPiServer.CMS.UI version 7.15.0 or higher
 * Requires EPiServer.Packaging 3.2.0 or higher
